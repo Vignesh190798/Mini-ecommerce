@@ -10,7 +10,10 @@ dotenv.config();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "https://ubiquitous-gumdrop-91c7c8.netlify.app", // your Netlify frontend
+  credentials: true
+}));
 
 // Connect to MongoDB
 connectDatabase();
